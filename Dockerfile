@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:16.04
 MAINTAINER Jonathon Moore <jon@digia.io>
 
 # Suppress
@@ -25,28 +25,28 @@ RUN /usr/sbin/update-locale
 RUN apt-get update && apt-get install -y \
   --no-install-recommends --allow-remove-essential --allow-change-held-packages \
   apache2 \
-  libapache2-mod-php \
+  libapache2-mod-php7.0 \
   libmysqlclient-dev \
   mariadb-client \
-  php \
+  php7.0 \
   php-apcu \
-  php-apcu-bc \
-  php-cli \
-  php-curl \
-  php-gd \
-  php-imap \
-  php-json \
-  php-ldap \
-  php-mbstring \
-  php-mcrypt \
-  php-mysql \
-  php-opcache \
-  php-soap \
-  php-xdebug \
-  php-xml \
-  php-xmlrpc \
-  php-xsl \
-  php-zip
+  # php-apcu-bc \
+  php7.0-cli \
+  php7.0-curl \
+  php7.0-gd \
+  php7.0-imap \
+  php7.0-json \
+  php7.0-ldap \
+  php7.0-mbstring \
+  php7.0-mcrypt \
+  php7.0-mysql \
+  php7.0-opcache \
+  php7.0-soap \
+  # php-xdebug \
+  php7.0-xml \
+  php7.0-xmlrpc \
+  php7.0-xsl \
+  php7.0-zip
 
 RUN a2enmod rewrite
 
